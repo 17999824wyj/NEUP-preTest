@@ -1,8 +1,8 @@
-# 2. markdown 写作
+# markdown 写作
 
 ## 本节目录
 
-- [2. markdown 写作](#2-markdown-写作)
+- [markdown 写作](#markdown-写作)
   - [本节目录](#本节目录)
     - [背景](#背景)
     - [考核指标](#考核指标)

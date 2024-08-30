@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>计算机相关知识 - 计算机网络 - 先锋面前题合集</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../preface.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded "><a href="../../2024/web/summary.html"><strong aria-hidden="true">2.</strong> 2024 网络部招新七天乐</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2024/web/ch-1.html"><strong aria-hidden="true">2.1.</strong> Git 基础知识</a></li><li class="chapter-item expanded "><a href="../../2024/web/ch-2.html"><strong aria-hidden="true">2.2.</strong> markdown 写作</a></li><li class="chapter-item expanded "><a href="../../2024/web/ch-3.html"><strong aria-hidden="true">2.3.</strong> Linux 环境 与 shell 脚本</a></li><li class="chapter-item expanded "><a href="../../2024/web/ch-4.html"><strong aria-hidden="true">2.4.</strong> 计算机相关知识 - 编程语言</a></li><li class="chapter-item expanded "><a href="../../2024/web/ch-5.html" class="active"><strong aria-hidden="true">2.5.</strong> 计算机相关知识 - 计算机网络</a></li><li class="chapter-item expanded "><a href="../../2024/web/ch-6.html"><strong aria-hidden="true">2.6.</strong> 计算机相关知识 - 数据结构与算法</a></li></ol></li><li class="chapter-item expanded "><a href="../../2024/hardware/summary.html"><strong aria-hidden="true">3.</strong> 2024 硬件部招新面前题</a></li><li class="chapter-item expanded "><a href="../../2024/basic/summary.html"><strong aria-hidden="true">4.</strong> 2024 基础事务部招新面前题</a></li><li class="chapter-item expanded "><a href="../../back.html"><strong aria-hidden="true">5.</strong> 后记</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">先锋面前题合集</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="计算机相关知识---计算机网络"><a class="header" href="#计算机相关知识---计算机网络">计算机相关知识 - 计算机网络</a></h1>
+<h2 id="本节目录"><a class="header" href="#本节目录">本节目录</a></h2>
+<ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86---%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">计算机相关知识 - 计算机网络</a>
+<ul>
+<li><a href="#%E6%9C%AC%E8%8A%82%E7%9B%AE%E5%BD%95">本节目录</a>
+<ul>
+<li><a href="#%E8%83%8C%E6%99%AF">背景</a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE%E4%B8%80-%EF%B8%8F%EF%B8%8F">题目一 <code>⭐️⭐️</code></a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE%E4%BA%8C-%EF%B8%8F%EF%B8%8F%EF%B8%8F">题目二 <code>⭐️⭐️⭐️</code></a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE%E4%B8%89-%EF%B8%8F%EF%B8%8F%EF%B8%8F">题目三 <code>⭐️⭐️⭐️</code></a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE%E5%9B%9B-%EF%B8%8F%EF%B8%8F%EF%B8%8F%EF%B8%8F">题目四 <code>⭐️⭐️⭐️⭐️</code></a></li>
+<li><a href="#%E9%A2%98%E7%9B%AE%E4%BA%94-%EF%B8%8F%EF%B8%8F%EF%B8%8F%EF%B8%8F">题目五 <code>⭐️⭐️⭐️⭐️</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="背景"><a class="header" href="#背景">背景</a></h3>
+<p>计算机网络作为计算机科学领域的基础学科，是非常重要的。特别是随着人工智能、大数据、云计算等技术的迅猛发展，大模型的训练和应用日益成为热点话题，这使得算力问题愈发凸显。</p>
+<p>一方面，大模型的训练需要极高的计算资源，单一设备的算力往往难以满足需求。因此，分布式计算成为了解决这一问题的关键。通过将计算任务分散到多个节点上，分布式计算不仅提高了计算效率，还降低了成本，使得大模型的训练和应用成为可能。在这个过程中，计算机网络扮演着至关重要的角色，它为分布式计算提供了数据传输和资源共享的通道。</p>
+<p>所以，本部分我们主要需要大家学习一下计算机网络的相关知识，为后续的内容打基础。</p>
+<h3 id="题目一-"><a class="header" href="#题目一-">题目一 <code>⭐️⭐️</code></a></h3>
+<ol>
+<li><code>⭐️⭐️</code> 掌握一些基础知识，比如七层模型、五层模型等。</li>
+<li><code>⭐️⭐️</code> 对比 HTTP 协议与 HTTPS 协议。</li>
+<li><code>⭐️⭐️⭐️</code> 区分辨别<code>socket</code>和<code>websocket</code>。</li>
+<li><code>⭐️⭐️</code> 假如你拥有一个域名和 Web 服务器，你该如何做来让你的好朋友能在互联网通过域名访问你的 Web 服务器？</li>
+</ol>
+<h3 id="题目二-"><a class="header" href="#题目二-">题目二 <code>⭐️⭐️⭐️</code></a></h3>
+<blockquote>
+<p><em>小王</em>的老师让他去在<a href="https://scholar.google.com">Google scholar</a>上搜索一篇资料<br />
+但是他经过尝试，无论用手机还是电脑都无法打开这个<strong>网站</strong>。<br />
+<em>小强</em>告诉<em>小王</em>，他有一个"<a href="https://xs.essclick.com">盗版网站</a>"跟那个 Google scholar 的功能是一样的，也能搜索到资料。小王试了一下，发现确实可以用。</p>
+<p>不过小王有些疑惑：</p>
+<ul>
+<li>
+<p>① 当他打开这个替代网站时，<strong>我的电脑</strong>、网络传输传输过程以及远程的<strong>服务器</strong>等相关的设备上都<strong>发生了什么</strong>？</p>
+</li>
+<li>
+<p>② 而最开始的<strong>打不开</strong>Google Scholar，问题出现在哪些步骤？</p>
+<p>提示：可能涉及到 "长城防火墙"，可以在 github 上搜索到教学/讨论贴。</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="题目三-"><a class="header" href="#题目三-">题目三 <code>⭐️⭐️⭐️</code></a></h3>
+<blockquote>
+<p>第二天，<em>小王</em>把搜到的资料交给老师后，提到了了自己昨天遇到的事情，并且跟老师说了小强给他的"盗版网站"，老师并没有说什么，只是让<em>小王</em>再去<a href="http://mirrors.asnet.am/ubuntu-releases/">这里</a>帮他再下一个文件。</p>
+<p>可是当<em>小王</em>下载的时候发现下载速度非常慢，有的文件甚至无法下载，于是他在网上搜索怎么解决，有人说使用<a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/">国内的镜像站</a>可以解决。看到镜像站，<em>小王</em>想到昨天那个学术搜索好像也叫什么<a href="https://xs.essclick.com">XX 镜像站</a>。</p>
+<p>于是小王开始思考：</p>
+<ul>
+<li>① 镜像站和原来的网站<strong>有什么区别</strong>？</li>
+<li>② 他也想做一个镜像站<strong>怎么做</strong>？可能需要什么技术或设备？</li>
+<li>③ 如果让你也去做一个网站，你<strong>希望</strong>做一个<strong>什么样的网站</strong>？</li>
+</ul>
+</blockquote>
+<h3 id="题目四-"><a class="header" href="#题目四-">题目四 <code>⭐️⭐️⭐️⭐️</code></a></h3>
+<blockquote>
+<p>某天，<em>小王</em>和在美国留学的表姐<em>润叶</em>聊天时提到了这些问题，<em>润叶</em>说她那访问这些网站、下载文件都没有问题，还说你以后有问题的话她可以帮忙</p>
+<p>为了不麻烦表姐，<em>小王</em>说让她把电脑开着，自己用远程控制软件操作就行：</p>
+<ul>
+<li>① 你<strong>远程控制</strong>她的电脑，在她的浏览器<strong>输入<a href="https://scholar.google.com">网址</a>之后</strong>,她的电脑<strong>打开这个网站</strong>。</li>
+<li>② 打开网站后，你找到了你需要的资料，并且<strong>下载到她的电脑上</strong>了，之后你用 WeChat 将你<strong>需要的资料发回来</strong>了。</li>
+</ul>
+<p>过了几天，<em>小强</em>告诉<em>小王</em>有一个软件可以帮助小王<a href="https://scholar.google.com">打开无法打开的网站</a>,同时还可以加速下载有些<a href="http://mirrors.asnet.am/ubuntu-releases/">文件</a>的速度。你打开看了看，里面有一个<strong>http 代理</strong>。</p>
+<p>这个东西是干什么的？以及它的实现原理又分为哪几步？</p>
+<p>你联想到前几天操控表姐的电脑的过程，感觉其中似乎有哪些步骤非常相似，请指出两处。</p>
+</blockquote>
+<h3 id="题目五-"><a class="header" href="#题目五-">题目五 <code>⭐️⭐️⭐️⭐️</code></a></h3>
+<p>小 G 同学刚刚学完 HTTP 协议，写了一个登陆系统的接口，他偷懒地直接使用 GET 请求来处理登录的数据，被大 P 同学得知后教训了一顿，并且大 P 同学还发现这个登录系统能被简单而致命的 <strong>SQL 注入</strong> 攻击直接绕过登录验证…
+登陆数据发送至：116.198.235.185:721</p>
+<p>据悉，小 G 同学的代码有一部分是这样写的：</p>
+<pre><code class="language-sql">-- Retrieve the username and password parameters [From GET]
+SELECT * FROM users WHERE username='{username}' AND password='{password}';
+</code></pre>
+<ol>
+<li><code>⭐️⭐️⭐️⭐️</code> 根据题目信息尝试通过漏洞登录小 G 同学的后台，接收服务器返回的信息，注意：请在提交的请求信息内包含你的学号用于记录你的尝试(只需绕过登录即可，请不要进行其他的操作，是无效的)</li>
+<li><code>⭐️⭐️⭐️⭐️</code> 请诊断小 G 同学这些操作中不安全，不合理的部分，并且提出修改建议</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../2024/web/ch-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../2024/web/ch-6.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../2024/web/ch-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../2024/web/ch-6.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -10,4 +10,8 @@
   - [计算机相关知识 - 数据结构与算法](./2024/web/ch-6.md)
 - [2024 硬件部招新面前题](./2024/hardware/summary.md)
 - [2024 基础事务部招新面前题](./2024/basic/summary.md)
+  - [浑南办公室招新面前题](./2024/basic/hn-bgs.md)
+  - [南湖办公室招新面前题](./2024/basic/nh-bgs.md)
+  - [推广部招新面前题](./2024/basic/popularize.md)
+  - [美工部招新面前题](./2024/basic/arts.md)
 - [后记](./back.md)

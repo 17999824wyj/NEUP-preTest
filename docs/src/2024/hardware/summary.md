@@ -188,6 +188,8 @@ PS：做前提示：不用担心什么都看不懂，做不来，学习本身才
 
 这里有一台 Xiaomi 14，它的信息如图：
 
+![](./resources/image17.jpg)
+
 还有一台 Redmi K60，它的信息如图：
 
 ![](./resources/image16.jpg)

@@ -14,4 +14,5 @@
   - [南湖办公室招新面前题](./2024/basic/nh-bgs.md)
   - [推广部招新面前题](./2024/basic/popularize.md)
   - [美工部招新面前题](./2024/basic/arts.md)
+- [2024 招新海报](./2024/post.md)
 - [后记](./back.md)
